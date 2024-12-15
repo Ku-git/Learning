@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  nacos:
+    image: nacos/nacos-server
+    ports:
+     - 8848:8848
+     - 9848:9848
+    environment:
+      MODE: standalone
+      MYSQL_SERVICE_HOST: db
+      MYSQL_SERVICE_PORT: 3306
+  db:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_DATABASE: ms
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      retries: 5
+      timeout: 5s
+      start_period: 30s
+
+networks:
+  backend:
+    driver: bridge
+    
