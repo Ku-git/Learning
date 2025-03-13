@@ -27,6 +27,7 @@
 
     <modules>
         <module>nacos</module>
+        <module>socket</module>
     </modules>
 
     <dependencies>
