@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://username:password@127.0.0.1:27017/local
+server:
+  port: 8088
+
+#socketio:
+#  port: 9092

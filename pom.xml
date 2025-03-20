@@ -29,6 +29,7 @@
         <module>nacos</module>
         <module>socket</module>
         <module>grpc</module>
+        <module>mongo</module>
     </modules>
 
     <dependencies>
